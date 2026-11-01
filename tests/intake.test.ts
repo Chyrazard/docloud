@@ -4,6 +4,7 @@ import { mkdtempSync, rmSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomBytes, randomUUID } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 const temp = mkdtempSync(join(tmpdir(), 'docloud-intake-'));
 process.env.DATA_DIR = temp;
 process.env.APP_URL = 'http://localhost:3270';
@@ -130,6 +131,23 @@ test('public intake stores encrypted contacts and private photo without publishi
       row<{ n: number }>('SELECT COUNT(*) n FROM intake_profiles')!.n,
       1,
       'privacy requests never delete before human identity verification',
+    );
+    const stats = JSON.parse(
+      execFileSync(process.execPath, ['--import', 'tsx', 'scripts/intake.ts', 'stats'], {
+        encoding: 'utf8',
+        env: process.env,
+      }),
+    );
+    assert.equal(stats.profiles.total, 1);
+    assert.equal(stats.privacyRequests.pending, 1);
+    assert.deepEqual(stats.sources, [{ source: 'whatsapp', total: 1 }]);
+    const exportPath = join(temp, 'private-export.json');
+    execFileSync(process.execPath, ['--import', 'tsx', 'scripts/intake.ts', 'export', exportPath], {
+      env: process.env,
+    });
+    assert.equal(
+      JSON.parse(readFileSync(exportPath, 'utf8'))[0].contact.email,
+      'intake@example.com',
     );
   } finally {
     db().close();
