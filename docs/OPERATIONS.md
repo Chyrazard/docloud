@@ -52,3 +52,19 @@ Cookies Secure en producción, HttpOnly, SameSite=Lax; comprobación de origen e
 No equivale a una auditoría de seguridad. Falta verificar correo, recuperación robusta, monitoreo de abuso, revisión independiente, retención y gestión de derechos, proveedor KYC, procesador financiero y una operación de soporte. No hay protección absoluta contra fraude o maltrato.
 
 Los límites usan la IP que nginx sobrescribe en X-Real-IP. Tras Cloudflare puede representar una IP del proxy; configurar correctamente las redes confiables de Cloudflare si aumenta el tráfico. Nunca confiar indiscriminadamente en cabeceras enviadas por clientes.
+
+## Captación rápida: /unete
+
+El enlace `https://dogs.belctech.com/unete` captura preperfiles privados. Admite `?ref=whatsapp` o `?utm_source=instagram` para registrar el canal. No crea sesiones, usuarios ni publicaciones y no vincula automáticamente registros a cuentas con el mismo correo. Antes de migrar un preperfil se deberá comprobar la titularidad de su contacto.
+
+Los contactos están cifrados con la misma clave del servidor; las fotos están en `DATA_DIR/intake-photos`, fuera del directorio público y cubiertas por el respaldo. Se guarda la versión y texto del consentimiento junto con la fecha de creación. Los registros duplicados no reemplazan información existente. Hay límites por IP, un límite global diario y un campo trampa para automatizaciones básicas; no equivalen a una defensa completa frente a bots.
+
+Como operador autorizado, desde `/srv/docloud/app` en el VPS:
+
+```sh
+bash scripts/intake.sh stats
+bash scripts/intake.sh export /srv/docloud/data/preperfiles-2026-11-01.json
+bash scripts/intake.sh requests /srv/docloud/data/solicitudes-2026-11-01.json
+```
+
+Las exportaciones privadas no sobrescriben archivos existentes. No subirlas a Git ni alojarlas en el directorio público. El comando `stats` muestra solo cantidades y preferencias; no muestra datos de contacto. Las solicitudes de acceso/corrección/eliminación se registran en `/unete/privacidad` y requieren revisión humana y comprobación de titularidad antes de ejecutar cambios. No existe envío automático de correo o WhatsApp ni se afirma que el formulario haya verificado la identidad.

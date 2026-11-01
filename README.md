@@ -24,6 +24,10 @@ npm run build
 npm start
 ```
 
+## Captación rápida
+
+Comparte **https://dogs.belctech.com/unete**. El formulario recoge nombre, correo, celular, foto y datos del perro, y preferencia por dinero, crías o ambas. Crea un preperfil privado con consentimiento registrado; no crea una cuenta ni publica datos sin un paso posterior de confirmación. Puedes usar `?ref=whatsapp` o `?utm_source=instagram` para distinguir el origen de los registros. Consulta las instrucciones privadas del operador en [operación](docs/OPERATIONS.md#captación-rápida-unete).
+
 ## Incluido
 
 - React 19, Next.js App Router, Node.js y TypeScript estricto.

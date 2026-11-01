@@ -23,6 +23,7 @@ import {
 } from '@/lib/security';
 import { canRespond, dogSchema, termsSchema, puppySchema } from '@/lib/domain';
 import { demoDogs } from '@/lib/demo';
+import { saveIntake, savePrivacyRequest } from '@/lib/intake-server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 type Proposal = {
@@ -121,6 +122,13 @@ async function handler(req: Request, { params }: { params: Promise<{ path: strin
     if (resource === 'health' && method === 'GET') {
       row('SELECT 1');
       return NextResponse.json({ ok: true, service: 'docloud' });
+    }
+    if (resource === 'intake' && method === 'POST') {
+      if (!rateLimit(`intake-attempt:${ip}`, 12, 60000))
+        throw new ApiError(429, 'Espera un minuto antes de volver a intentarlo.');
+      if (!id) return NextResponse.json(await saveIntake(await body(req), ip), { status: 201 });
+      if (id === 'privacy-request')
+        return NextResponse.json(savePrivacyRequest(await body(req), ip), { status: 201 });
     }
     if (resource === 'auth') {
       if (id === 'me' && method === 'GET') {

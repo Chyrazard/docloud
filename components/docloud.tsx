@@ -853,10 +853,14 @@ export default function Docloud() {
                       say('Sal de la demo para publicar un perfil real.');
                       return;
                     }
+                    if (!user) {
+                      window.location.assign('/unete');
+                      return;
+                    }
                     if (needAccount()) setModal({ type: 'pet' });
                   }}
                 >
-                  <Plus size={17} /> Publicar mi peludo
+                  <Plus size={17} /> {user ? 'Publicar mi peludo' : 'Registrar mi peludo'}
                 </Button>
               </div>
               <section className="hero">
@@ -1068,6 +1072,10 @@ export default function Docloud() {
                 <Button
                   variant="secondary"
                   onClick={() => {
+                    if (!user && !demo) {
+                      window.location.assign('/unete');
+                      return;
+                    }
                     if (needAccount()) setModal({ type: 'pet' });
                   }}
                 >
