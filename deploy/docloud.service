@@ -1,0 +1,21 @@
+[Unit]
+Description=DOCLOUD Next.js application
+After=network.target
+[Service]
+Type=simple
+User=docloud
+Group=docloud
+WorkingDirectory=/srv/docloud/app
+EnvironmentFile=/etc/docloud.env
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3270
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/docloud/data
+[Install]
+WantedBy=multi-user.target

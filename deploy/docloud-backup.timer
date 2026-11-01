@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily DOCLOUD backup
+[Timer]
+OnCalendar=*-*-* 04:30:00 America/Bogota
+Persistent=true
+RandomizedDelaySec=300
+[Install]
+WantedBy=timers.target
