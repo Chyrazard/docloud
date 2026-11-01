@@ -74,7 +74,7 @@ test('two accounts negotiate, lock a version and protect private evidence', asyn
       age: 3,
       city: 'Bogotá',
       bio: 'Un perro muy sociable y juguetón para este test.',
-      image: '/images/milo.jpg',
+      image: '/images/milo-jack.jpg',
       pedigree: false,
       mode: 'money',
       amount: 350000,

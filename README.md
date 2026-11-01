@@ -84,4 +84,4 @@ Consulta [operación](docs/OPERATIONS.md) y [casos de negocio](docs/PRODUCT.md).
 
 ## Imágenes y tipografía
 
-Fotografías ilustrativas obtenidas de Unsplash, servidas localmente. IDs de origen: `photo-1552053831-71594a27632d`, `photo-1518717758536-85ae29035b6d`, `photo-1605568427561-40dd23c2acea`, `photo-1633722715463-d30f4f325e24`, `photo-1505628346881-b72b27e84530`. Son ejemplos visuales y no documentación de mascotas reales. Tipografía Manrope distribuida bajo SIL Open Font License; licencia en `public/fonts/OFL.txt`.
+Fotografías ilustrativas obtenidas de Unsplash, servidas localmente. IDs de origen: `photo-1552053831-71594a27632d`, `photo-1601111124055-c8746e0fdba3`, `photo-1597513942294-f7e2cc5986d6`, `photo-1605568427561-40dd23c2acea`, `photo-1633722715463-d30f4f325e24`, `photo-1605785721885-c8ab2ad9d3f3`. Son ejemplos visuales y no documentación de mascotas reales. Tipografía Manrope distribuida bajo SIL Open Font License; licencia en `public/fonts/OFL.txt`.
