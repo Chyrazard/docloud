@@ -9,7 +9,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "backup": "node scripts/backup.mjs",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "brand:export": "tsx scripts/export-brand.tsx"
   },
   "dependencies": {
     "better-sqlite3": "13.0.3",

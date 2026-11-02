@@ -1,4 +1,5 @@
 'use client';
+import BrandLogo from '@/components/brand/brand-logo';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2, LockKeyhole, PawPrint } from 'lucide-react';
@@ -10,13 +11,7 @@ export default function IntakePrivacy() {
     <div className="join-page">
       <header className="join-nav">
         <Link href="/unete" className="brand">
-          <span className="brand-mark">
-            <PawPrint size={22} fill="currentColor" />
-          </span>
-          <span>
-            do<span className="brand-light">cloud</span>
-            <i />
-          </span>
+          <BrandLogo />
         </Link>
         <Link href="/unete" className="join-back">
           <ArrowLeft size={14} /> Volver al formulario
@@ -55,6 +50,12 @@ export default function IntakePrivacy() {
             registro y tus solicitudes. Los datos de contacto se guardan cifrados y la foto no tiene
             un enlace público. El alojamiento utiliza el servidor de DOCLOUD y Cloudflare para
             servir y proteger el sitio.
+          </p>
+          <h2>Preferencias visuales</h2>
+          <p>
+            Tu navegador puede guardar si pausaste u ocultaste a Toby, nuestra mascota, y si ya
+            viste la bienvenida de esta sesión. Las preguntas del panel usan respuestas preparadas y
+            no se envían a un servicio de IA.
           </p>
           <h2>Conservación y decisiones pendientes</h2>
           <p>

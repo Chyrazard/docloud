@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'Registra a tu peludo en DOCLOUD. Un primer paso sencillo para encontrar personas comprometidas.',
     url: 'https://dogs.belctech.com/unete',
-    images: [{ url: 'https://dogs.belctech.com/images/hero.jpg' }],
+    images: [{ url: 'https://dogs.belctech.com/brand/docloud-social.png' }],
   },
   twitter: { card: 'summary_large_image' },
 };

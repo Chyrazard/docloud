@@ -1,4 +1,5 @@
 'use client';
+import BrandLogo from '@/components/brand/brand-logo';
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import {
   ArrowUpRight,
@@ -656,13 +657,7 @@ export default function Docloud() {
             navigate('discover');
           }}
         >
-          <span className="brand-mark">
-            <PawPrint size={24} fill="currentColor" />
-          </span>
-          <span>
-            do<span className="brand-light">cloud</span>
-            <i />
-          </span>
+          <BrandLogo />
         </a>
         <div className="workspace-label">UN MUNDO PARA ELLOS</div>
         <nav>
@@ -724,6 +719,13 @@ export default function Docloud() {
               aria-label="Abrir menú"
             >
               <Menu size={22} />
+            </button>
+            <button
+              className="brand mobile-brand-icon"
+              aria-label="DOCLOUD, inicio"
+              onClick={() => navigate('discover')}
+            >
+              <BrandLogo faceOnly />
             </button>
             <House size={15} />
             <ChevronRight size={13} />
@@ -3361,8 +3363,9 @@ function Legal({ page }: { page: 'privacy' | 'terms' }) {
           <h3>Almacenamiento local</h3>
           <p>
             La sesión utiliza una cookie HttpOnly. El recorrido de demostración guarda sus datos
-            ficticios en el almacenamiento de tu navegador. Las imágenes ilustrativas se sirven
-            desde el mismo sitio.
+            ficticios en el almacenamiento de tu navegador. También guardamos tus preferencias para
+            pausar u ocultar a Toby y una marca de sesión para su bienvenida. Las imágenes
+            ilustrativas se sirven desde el mismo sitio.
           </p>
           <h3>Estado de la plataforma</h3>
           <p>

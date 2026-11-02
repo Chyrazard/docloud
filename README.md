@@ -52,6 +52,10 @@ Los correos, los recordatorios cuando el usuario está desconectado, la recupera
 
 Antes de lanzamiento comercial: seleccionar proveedor de identidad y procesador apto para este modelo de negocio; definir operador, privacidad, retención, cancelaciones, soporte y tarifas; revisión profesional de políticas y bienestar; añadir recuperación segura, panel de moderación, monitoreo y copias fuera del VPS. No presentar este piloto como producto comercial terminado.
 
+## Identidad y guía visual
+
+Toby es el Jack Russell de DOCLOUD: personaje vectorial original de pie, con saludo, cola, rascado y lamido. Comparte carita con el logo, favicon, bienvenida breve y guía flotante. Se puede pausar u ocultar y respeta el movimiento reducido. El panel ofrece respuestas preparadas; WhatsApp con IA queda pendiente del nuevo número y de la integración con Chyraz API. Consulta [la guía de la mascota](docs/MASCOT.md) para exportar los recursos o configurar el número público.
+
 ## Arquitectura
 
 - `app/`: páginas, estilos, API y metadatos.

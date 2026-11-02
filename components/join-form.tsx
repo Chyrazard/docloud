@@ -1,4 +1,6 @@
 'use client';
+import BrandLogo from '@/components/brand/brand-logo';
+import MascotScene from '@/components/brand/mascot-scene';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
@@ -137,13 +139,7 @@ export default function JoinForm() {
     <div className="join-page">
       <header className="join-nav">
         <Link href="/" className="brand" aria-label="DOCLOUD, inicio">
-          <span className="brand-mark">
-            <PawPrint size={23} fill="currentColor" />
-          </span>
-          <span>
-            do<span className="brand-light">cloud</span>
-            <i />
-          </span>
+          <BrandLogo />
         </Link>
         <Link href="/" className="join-back">
           Explorar DOCLOUD <ArrowUpRightIcon />
@@ -224,24 +220,7 @@ export default function JoinForm() {
                 Conecta con personas que también consideran un cruce para su perro y quieren hacerlo
                 con acuerdos claros y compromiso.
               </p>
-              <div className="join-story-photo">
-                <img
-                  src="/images/toby-jack.jpg"
-                  alt="Jack Russell Terrier al aire libre"
-                  fetchPriority="high"
-                />
-                <div className="join-photo-card">
-                  <span>
-                    <Heart size={19} />
-                  </span>
-                  <div>
-                    Buenos encuentros.<small>Mejores historias.</small>
-                  </div>
-                </div>
-                <span className="join-photo-paw">
-                  <PawPrint size={30} fill="currentColor" />
-                </span>
-              </div>
+              <MascotScene />
               <div className="join-promises">
                 <span>
                   <Check size={14} /> Sin costo
