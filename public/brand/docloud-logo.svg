@@ -4,8 +4,6 @@
   height: 100%;
   overflow: visible;
   isolation: isolate;
-  --toby-look-x: 0px;
-  --toby-look-y: 0px;
 }
 .toby-body {
   transform-origin: 198px 327px;
